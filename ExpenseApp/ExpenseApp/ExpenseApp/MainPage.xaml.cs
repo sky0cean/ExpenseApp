@@ -17,5 +17,15 @@ namespace ExpenseApp
         {
             InitializeComponent();
         }
+
+        private void OnSaveButtonClicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnDeleteButtonClicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
