@@ -6,11 +6,44 @@
              mc:Ignorable="d"
              x:Class="ExpenseApp.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+    <StackLayout Margin="10,35,10,10">
+        <!-- Budget for the month starts from here -->
+        <Label Text="Budget for the month" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+               FontAttributes="Bold" />
+        <Editor x:Name="editor"
+                Placeholder="Enter your monthly goal"
+                HeightRequest="100" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Save"
+                    Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked" />
+        </Grid>
+        <!-- Expense for the month starts from here -->
+        <Label Text="Expense for the month" 
+           HorizontalOptions="Center"
+               FontAttributes="Bold" />
+        <Editor x:Name="expenseEditor"
+                Placeholder="Enter your expense"
+                HeightRequest="100" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Save"
+                    Clicked="OnExpenseSaveButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnExpenseDeleteButtonClicked" />
+        </Grid>
     </StackLayout>
+    
 
 </ContentPage>
