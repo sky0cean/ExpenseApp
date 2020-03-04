@@ -29,7 +29,7 @@
         <Label Text="Expense for the month" 
            HorizontalOptions="Center"
                FontAttributes="Bold" />
-        <Editor x:Name="expenseEditor"
+        <Editor x:Name="expenseEdit"
                 Placeholder="Enter your expense"
                 HeightRequest="100" />
         <Grid>

@@ -28,7 +28,7 @@ namespace ExpenseApp
 
             if (File.Exists(expenseFileName))
             {
-                editor.Text = File.ReadAllText(expenseFileName);
+                expenseEdit.Text = File.ReadAllText(expenseFileName);
             }
         }
 
@@ -48,7 +48,7 @@ namespace ExpenseApp
 
         private void OnExpenseSaveButtonClicked(object sender, EventArgs e)
         {
-            File.WriteAllText(expenseFileName, expenseEditor.Text);
+            File.WriteAllText(expenseFileName, expenseEdit.Text);
         }
 
         private void OnExpenseDeleteButtonClicked(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace ExpenseApp
             {
                 File.Delete(expenseFileName);
             }
-            expenseEditor.Text = string.Empty;
+            expenseEdit.Text = string.Empty;
         }
 
 
