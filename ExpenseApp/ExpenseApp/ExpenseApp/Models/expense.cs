@@ -9,7 +9,7 @@ namespace ExpenseApp.Models
         public string Filename { get; set; }
         public string Text { get; set; }
         public int Amount { get; set; }
-        public int Date { get; set; }
+        public DateTime Date { get; set; }
         public string Icon { get; set; }
 
     }

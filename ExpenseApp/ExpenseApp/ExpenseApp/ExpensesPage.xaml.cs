@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ExpenseApp.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +19,30 @@ namespace ExpenseApp
             InitializeComponent();
         }
 
-        private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var expenses = new List<Expense>();
+            var files = Directory.EnumerateFiles(App.FolderPath, "*.expenses.txt");
+            foreach(var filename in files)
+            {
+                expenses.Add(new Expense
+                {
+                    Filename = filename,
+                    Text = File.ReadAllText(filename),
+                    Date = File.GetCreationTime(filename)
+                });
+            }
+  
+        }
+
+        private void OnExpenseAddedClicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OneListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
 
         }
