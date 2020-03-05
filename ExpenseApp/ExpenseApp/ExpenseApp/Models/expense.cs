@@ -4,9 +4,10 @@ using System.Text;
 
 namespace ExpenseApp.Models
 {
-    public class expense
+    public class Expense
     {
         public string Filename { get; set; }
+        public string Text { get; set; }
         public int Amount { get; set; }
         public int Date { get; set; }
         public string Icon { get; set; }

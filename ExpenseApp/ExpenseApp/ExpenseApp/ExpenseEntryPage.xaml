@@ -4,16 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ExpenseApp.ExpenseEntryPage">
+             x:Class="ExpenseApp.ExpenseEntryPage"
+             Title="Expense Entry">
     <ContentPage.Content>
         <StackLayout Margin="10,35,10,10">
             <!-- Budget for the month starts from here -->
-            <Label Text="Budget for the month" 
-           HorizontalOptions="Center"
-               FontAttributes="Bold" />
+
             <Editor x:Name="editor"
-                Placeholder="Enter your monthly goal"
-                HeightRequest="100" />
+                    Text="{x:Binding Text}"
+                    Placeholder="Enter your expense"
+                    HeightRequest="100" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />

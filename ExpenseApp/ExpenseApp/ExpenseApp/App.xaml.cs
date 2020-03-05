@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -6,11 +7,14 @@ namespace ExpenseApp
 {
     public partial class App : Application
     {
+        public static string FolderPath { get; set; }
         public App()
         {
             InitializeComponent();
+            FolderPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
-            MainPage = new MainPage();
+            //Change the page to display in the app to Navigation Class page
+            MainPage = new NavigationPage(new ExpenseApp.MainPage());
         }
 
         protected override void OnStart()

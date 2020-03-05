@@ -29,10 +29,14 @@ namespace ExpenseApp
 
         }
 
-        private void OnSaveButtonClicked(object sender, EventArgs e)
+        async private void OnSaveButtonClicked(object sender, EventArgs e)
         {
             File.WriteAllText(filename, editor.Text);
+
+            await Navigation.PushAsync(new ExpenseEntryPage(),true);
         }
+
+
 
         private void OnDeleteButtonClicked(object sender, EventArgs e)
         {
