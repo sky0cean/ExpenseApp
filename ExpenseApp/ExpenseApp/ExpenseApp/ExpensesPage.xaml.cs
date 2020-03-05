@@ -34,17 +34,28 @@ namespace ExpenseApp
                     Date = File.GetCreationTime(filename)
                 });
             }
+
+            listView.ItemsSource = expenses.OrderBy(e => e.Date).ToList();
   
         }
 
-        private void OnExpenseAddedClicked(object sender, EventArgs e)
+        async void OnExpenseAddedClicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ExpenseEntryPage
+            {
+                BindingContext = new Expense()
+            });
         }
 
-        private void OneListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void OneListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            if(e.SelectedItem != null)
+            {
+                await Navigation.PushAsync(new ExpenseEntryPage
+                {
+                    BindingContext = e.SelectedItem as Expense
+                });
+            }
         }
     }
 }

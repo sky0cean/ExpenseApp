@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="ExpenseApp.ExpensesPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+"
+        <ToolbarItem Text="Add new expense here +"
                      Clicked="OnExpenseAddedClicked" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView"

@@ -33,7 +33,7 @@ namespace ExpenseApp
         {
             File.WriteAllText(filename, editor.Text);
 
-            await Navigation.PushAsync(new ExpenseEntryPage(),true);
+            await Navigation.PushAsync(new ExpensesPage(),true);
         }
 
 
