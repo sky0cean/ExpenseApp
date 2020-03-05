@@ -12,8 +12,9 @@
 
             <Editor x:Name="editor"
                     Text="{x:Binding Text}"
-                    Placeholder="Enter your expense"
+                    Placeholder="Enter your expense"                  
                     HeightRequest="100" />
+            <Image Source=" Resource.Drawable.icons8-gas-station-40.png" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
