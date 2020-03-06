@@ -13,15 +13,32 @@ namespace ExpenseApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 
-
-    Category piker selections
-
-
     public partial class ExpenseEntryPage : ContentPage
     {
+
+
+        //Selections for Category piker 
+        Dictionary<string, string> dic = new Dictionary<string, string>()
+        {
+            ["Clothing"] = "clothing.png",
+            ["Gas"]      =      "gas.png",
+            ["Grocery"]  =  "grocery.png",
+            ["Leisure"]  =  "leisure.png",
+            ["Rent"]     =     "rent.png",
+            ["Utility"]  =  "utility.png",
+        };
+
         public ExpenseEntryPage()
         {
             InitializeComponent();
+
+
+            foreach (var key in dic.Keys)
+            {
+                this.categoryPicker.Items.Add(key);
+            }
+
+
         }
 
         async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -53,11 +70,13 @@ namespace ExpenseApp
             await Navigation.PopAsync();
         }
 
-        async void CategoryChanged(object sender, EventArgs e)
+        void CategoryChanged(object sender, EventArgs e)
         {
-            var selectedCategory = _categoryDic.ElementAt(this.picker.SelectedIndex).Value;
+            var selectedCategory = dic.ElementAt(this.categoryPicker.SelectedIndex).Value;
 
-            this.categoryIcon.Source = "";
+            categoryIcon.Source = selectedCategory;
         }
+
+
     }
 }
