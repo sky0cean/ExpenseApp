@@ -14,7 +14,12 @@
                     Text="{x:Binding Text}"
                     Placeholder="Enter your expense"                  
                     HeightRequest="100" />
-            <Image Source="gas.png" />
+            <Picker x:Name="categoryPicker" 
+                    Title ="Select Category" 
+                    SelectedIndexChanged="CategoryChanged" />
+
+
+            <Image x:Name="categoryIcon" Source="gas.png" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />

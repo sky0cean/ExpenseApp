@@ -12,6 +12,11 @@ using Xamarin.Forms.Xaml;
 namespace ExpenseApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
+
+    Category piker selections
+
+
     public partial class ExpenseEntryPage : ContentPage
     {
         public ExpenseEntryPage()
@@ -46,6 +51,13 @@ namespace ExpenseApp
                 File.Delete(expense.Filename);
             }
             await Navigation.PopAsync();
+        }
+
+        async void CategoryChanged(object sender, EventArgs e)
+        {
+            var selectedCategory = _categoryDic.ElementAt(this.picker.SelectedIndex).Value;
+
+            this.categoryIcon.Source = "";
         }
     }
 }
