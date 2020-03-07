@@ -7,6 +7,8 @@ namespace ExpenseApp
 {
     public partial class App : Application
     {
+        private string budgetFilename;
+
         public static string FolderPath { get; set; }
     
         public App()
@@ -15,9 +17,16 @@ namespace ExpenseApp
             FolderPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
 
-            //Very first page will be Expense page
-
+            //If User sets budget, goto Expense page, else go to Budget entry page 
+            if (File.Exists(budgetFilename))
+            {
                 MainPage = new NavigationPage(new ExpensesPage());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new BudgetEntryPage());
+            }
+            
 
         }
 

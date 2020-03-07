@@ -68,6 +68,9 @@ namespace ExpenseApp
             }
         }
 
-
+        async void ResetBudgetButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BudgetEntryPage());
+        }
     }
 }

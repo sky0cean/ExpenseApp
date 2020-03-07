@@ -4,13 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ExpenseApp.BudgetEntryPage">
+             x:Class="ExpenseApp.BudgetEntryPage"
+             Title="Budget for the month">
 
         <!-- Budget for the month starts from here -->
     <StackLayout>
-        <Label Text="Budget for the month" 
-           HorizontalOptions="Center"
-               FontAttributes="Bold" />
+
         <Editor x:Name="BudgetEditor"
                 Keyboard="Numeric"
                 Placeholder="Enter your monthly goal"
