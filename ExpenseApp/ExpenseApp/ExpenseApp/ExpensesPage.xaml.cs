@@ -15,15 +15,12 @@ namespace ExpenseApp
     public partial class ExpensesPage : ContentPage
     {
 
-        string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "budget.txt");
+   
         public ExpensesPage()
         {
             InitializeComponent();
 
-            //if (File.Exists(filename))
-            //{
-            //    editor.Text = File.ReadAllText(filename);
-            //}
+
         }
 
         protected override void OnAppearing()
@@ -48,23 +45,7 @@ namespace ExpenseApp
         }
 
 
-        ////Go to Expense Entry page once budget is saved.
-        //async private void OnSaveButtonClicked(object sender, EventArgs e)
-        //{
-        //    File.WriteAllText(filename, editor.Text);
 
-        //    await Navigation.PushAsync(new ExpenseEntryPage(), true);
-        //}
-        
-        ////Make budget blank when use delete it
-        //private void OnDeleteButtonClicked(object sender, EventArgs e)
-        //{
-        //    if (File.Exists(filename))
-        //    {
-        //        File.Delete(filename);
-        //    }
-        //    editor.Text = string.Empty;
-        //}
 
         //Go to expense Entry page after clicking + button 
         async void OnExpenseAddedClicked(object sender, EventArgs e)

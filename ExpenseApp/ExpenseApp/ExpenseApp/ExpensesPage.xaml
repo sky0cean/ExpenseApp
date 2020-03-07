@@ -11,29 +11,7 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <!-- Budget for the month starts from here -->
-        <!--<Label Text="Budget for the month" 
-           HorizontalOptions="Center"
-               FontAttributes="Bold" />
-        <Editor x:Name="editor"
-                Keyboard="Numeric"
-                Placeholder="Enter your monthly goal"
-                HeightRequest="100" />
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-            </Grid.RowDefinitions>
-            <Button Text="Save"
-                    Clicked="OnSaveButtonClicked" />
-            <Button Grid.Column="1"
-                    Text="Delete"
-                    Clicked="OnDeleteButtonClicked" />
-        </Grid>-->
+        
 
     <ListView x:Name="listView"
               Margin="20"
