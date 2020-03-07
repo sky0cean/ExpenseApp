@@ -12,6 +12,7 @@
 
     <StackLayout>
         <Button Text="Reset budget" x:Name="ResetBudgetButton" Clicked="ResetBudgetButtonClicked" />
+        <Label x:Name="budgetLabel" />
 
         <ListView x:Name="listView"
               Margin="20"

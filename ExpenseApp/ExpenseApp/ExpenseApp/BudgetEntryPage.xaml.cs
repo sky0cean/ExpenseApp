@@ -13,22 +13,23 @@ namespace ExpenseApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BudgetEntryPage : ContentPage
     {
+        //string budgetFilename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "budget.txt");
 
-        string budgetFilename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "budget.txt");
         public BudgetEntryPage()
         {
             InitializeComponent();
 
-            if (File.Exists(budgetFilename))
+            if (File.Exists(App.budgetFilename))
             {
-                BudgetEditor.Text = File.ReadAllText(budgetFilename);
+                BudgetEditor.Text = File.ReadAllText(App.budgetFilename);
             }
         }
 
         ////Go to Expense Entry page once budget is saved.
         async private void OnSaveButtonClicked(object sender, EventArgs e)
         {
-            File.WriteAllText(budgetFilename, BudgetEditor.Text);
+            File.WriteAllText(App.budgetFilename, BudgetEditor.Text);
+            
 
             await Navigation.PushAsync(new ExpensesPage(), true);
         }
@@ -36,9 +37,9 @@ namespace ExpenseApp
         //Make budget blank when user deletes budget
         private void OnDeleteButtonClicked(object sender, EventArgs e)
         {
-            if (File.Exists(budgetFilename))
+            if (File.Exists(App.budgetFilename))
             {
-                File.Delete(budgetFilename);
+                File.Delete(App.budgetFilename);
             }
             BudgetEditor.Text = string.Empty;
         }

@@ -14,13 +14,13 @@ namespace ExpenseApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExpensesPage : ContentPage
     {
+        
 
-   
         public ExpensesPage()
         {
             InitializeComponent();
 
-
+            budgetLabel.Text = File.ReadAllText(App.budgetFilename);
         }
 
         protected override void OnAppearing()
