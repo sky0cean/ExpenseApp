@@ -21,7 +21,10 @@ namespace ExpenseApp
             InitializeComponent();
 
             budgetLabel.Text = File.ReadAllText(App.budgetFilename);
+
         }
+
+        
 
         protected override void OnAppearing()
         {
@@ -36,12 +39,19 @@ namespace ExpenseApp
                 {
                     Filename = filename,
                     Text = File.ReadAllText(filename),
+                    Amount = Double.Parse(File.ReadAllText(filename)),
                     Date = File.GetCreationTime(filename)
                 });
+
+                
+                double sub = Double.Parse(budgetLabel.Text) - Double.Parse(File.ReadAllText(filename));
+                budgetLabel.Text = sub.ToString();
             }
 
-            listView.ItemsSource = expenses.OrderBy(e => e.Date).ToList();
-  
+            
+            listView.ItemsSource = expenses.OrderBy(e => e.Date).ToList();          
+
+
         }
 
 

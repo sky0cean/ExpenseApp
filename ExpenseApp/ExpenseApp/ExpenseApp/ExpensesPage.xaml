@@ -11,8 +11,9 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <Button Text="Reset budget" x:Name="ResetBudgetButton" Clicked="ResetBudgetButtonClicked" />
         <Label x:Name="budgetLabel" />
+        <Button Text="Reset budget" x:Name="ResetBudgetButton" Clicked="ResetBudgetButtonClicked" />
+        
 
         <ListView x:Name="listView"
               Margin="20"
