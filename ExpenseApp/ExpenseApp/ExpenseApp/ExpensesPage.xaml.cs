@@ -21,11 +21,8 @@ namespace ExpenseApp
             InitializeComponent();
 
             budgetLabel.Text = File.ReadAllText(App.budgetFilename);
-
         }
-
-        
-
+      
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -39,11 +36,11 @@ namespace ExpenseApp
                 {
                     Filename = filename,
                     Text = File.ReadAllText(filename),
-                    Amount = Double.Parse(File.ReadAllText(filename)),
+                    //Amount = Double.Parse(File.ReadAllText(filename)),
                     Date = File.GetCreationTime(filename)
                 });
 
-                
+                //TODO//  Do something here!!!
                 double sub = Double.Parse(budgetLabel.Text) - Double.Parse(File.ReadAllText(filename));
                 budgetLabel.Text = sub.ToString();
             }
