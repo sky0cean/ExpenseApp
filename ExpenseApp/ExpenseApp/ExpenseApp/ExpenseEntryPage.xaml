@@ -6,32 +6,33 @@
              mc:Ignorable="d"
              x:Class="ExpenseApp.ExpenseEntryPage"
              Title="Expense Entry">
-    <ContentPage.Content>
+
         <StackLayout Margin="10,35,10,10">
             <!-- Budget for the month starts from here -->
 
             <Editor x:Name="editor"
-                    Text="{x:Binding Text}"
+                    Text="{Binding Text}"
+                    Keyboard="Numeric"
                     Placeholder="Enter your expense"                  
                     HeightRequest="100" />
-            <Picker x:Name="categoryPicker" 
+            <!--<Picker x:Name="categoryPicker" 
                     Title ="Select category" 
                     SelectedIndexChanged="CategoryChanged" />
 
-            <Image x:Name="categoryIcon" />
+            <Image x:Name="categoryIcon" />-->
             <!--<Image x:Name="categoryIcon" Source="gas.png" />-->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save"
-                    Clicked="OnSaveButtonClicked" />
+                <Button Text="Add"
+                    Clicked="OnExpenseAddedButtonClicked" />
                 <Button Grid.Column="1"
                     Text="Delete"
-                    Clicked="OnDeleteButtonClicked" />
+                    Clicked="OnExpenseDeleteButtonClicked" />
             </Grid>
 
         </StackLayout>
-    </ContentPage.Content>
+
 </ContentPage>

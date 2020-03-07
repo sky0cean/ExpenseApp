@@ -14,9 +14,16 @@ namespace ExpenseApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExpensesPage : ContentPage
     {
+
+        string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "budget.txt");
         public ExpensesPage()
         {
             InitializeComponent();
+
+            //if (File.Exists(filename))
+            //{
+            //    editor.Text = File.ReadAllText(filename);
+            //}
         }
 
         protected override void OnAppearing()
@@ -25,6 +32,7 @@ namespace ExpenseApp
 
             var expenses = new List<Expense>();
             var files = Directory.EnumerateFiles(App.FolderPath, "*.expenses.txt");
+
             foreach(var filename in files)
             {
                 expenses.Add(new Expense
@@ -39,6 +47,26 @@ namespace ExpenseApp
   
         }
 
+
+        ////Go to Expense Entry page once budget is saved.
+        //async private void OnSaveButtonClicked(object sender, EventArgs e)
+        //{
+        //    File.WriteAllText(filename, editor.Text);
+
+        //    await Navigation.PushAsync(new ExpenseEntryPage(), true);
+        //}
+        
+        ////Make budget blank when use delete it
+        //private void OnDeleteButtonClicked(object sender, EventArgs e)
+        //{
+        //    if (File.Exists(filename))
+        //    {
+        //        File.Delete(filename);
+        //    }
+        //    editor.Text = string.Empty;
+        //}
+
+        //Go to expense Entry page after clicking + button 
         async void OnExpenseAddedClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ExpenseEntryPage
@@ -47,6 +75,7 @@ namespace ExpenseApp
             });
         }
 
+        //Edit existing expense entries
         async void OneListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if(e.SelectedItem != null)
@@ -57,5 +86,7 @@ namespace ExpenseApp
                 });
             }
         }
+
+
     }
 }

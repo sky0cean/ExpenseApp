@@ -9,16 +9,45 @@
         <ToolbarItem Text="Click to add new expense + "
                      Clicked="OnExpenseAddedClicked" />
     </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <!-- Budget for the month starts from here -->
+        <!--<Label Text="Budget for the month" 
+           HorizontalOptions="Center"
+               FontAttributes="Bold" />
+        <Editor x:Name="editor"
+                Keyboard="Numeric"
+                Placeholder="Enter your monthly goal"
+                HeightRequest="100" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Button Text="Save"
+                    Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked" />
+        </Grid>-->
+
     <ListView x:Name="listView"
               Margin="20"
               ItemSelected="OneListViewItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Text}"
-                          Detail="{Binding Date}"/>
+                <ImageCell Text="{Binding Text}"
+                           TextColor="Red"
+                           Detail="{Binding Date}"
+                           ImageSource="selectedCategory" />
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-    
+    </StackLayout>
+
 
 </ContentPage>
