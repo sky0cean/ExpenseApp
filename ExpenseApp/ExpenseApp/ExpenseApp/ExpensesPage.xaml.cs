@@ -13,8 +13,7 @@ namespace ExpenseApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExpensesPage : ContentPage
-    {
-        
+    {      
 
         public ExpensesPage()
         {
@@ -40,7 +39,6 @@ namespace ExpenseApp
                     Filename = filename,
                     Text = File.ReadAllText(filename),
                     Amount = Double.Parse(File.ReadAllText(filename)),
-                    //Balance = sub-,
                     Date = File.GetCreationTime(filename),
                     
                 });
@@ -49,16 +47,10 @@ namespace ExpenseApp
                 sub = sub - Double.Parse(File.ReadAllText(filename));
                 CurrentBudgetLabel.Text = sub.ToString();
             }
-
-            
-            listView.ItemsSource = expenses.OrderBy(e => e.Date).ToList();
-            
-
+         
+            listView.ItemsSource = expenses.OrderBy(e => e.Date).ToList();          
 
         }
-
-
-
 
         //Go to expense Entry page after clicking + button 
         async void OnExpenseAddedClicked(object sender, EventArgs e)

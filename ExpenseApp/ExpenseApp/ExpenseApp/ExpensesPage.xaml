@@ -25,15 +25,16 @@
                             Orientation="Horizontal">
                             <StackLayout
                                 Orientation="Vertical">
-                                <Label Text="Name will come here" />
+                                <Label x:Name="InputProductLabel" Text="Name will come here" />
                                 <StackLayout
                                     Orientation="Horizontal">
-                                <Label Text="{Binding Text}"
+                                    <Label x:Name="InputPriceLabel" Text="{Binding Text}"
                                        TextColor="Red"/>
-                                <Label Text="{Binding Date}" />
+                                    <Label x:Name="InputDateLabel" Text="{Binding Date}" />
                                 </StackLayout>
                             </StackLayout>
                             <Image 
+                                x:Name="InputIconLabel"
                                 WidthRequest="40"
                                 HeightRequest="40"
                                 VerticalOptions="Center"
@@ -41,11 +42,7 @@
                                 Source="clothing.png" />
                         </StackLayout>
                     </ViewCell>
-                <!--<ImageCell Text="{Binding Text}"
-                           TextColor="Red"
-                           Detail="{Binding Date}"
-                           ImageSource="selectedCategory" />-->
-            </DataTemplate>
+                </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
     </StackLayout>
