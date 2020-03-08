@@ -30,7 +30,9 @@ namespace ExpenseApp
             var expenses = new List<Expense>();
             var files = Directory.EnumerateFiles(App.FolderPath, "*.expenses.txt");
             double sub = Double.Parse(budgetLabel.Text);
+
             
+
 
             foreach (var filename in files)
             {

@@ -40,11 +40,13 @@ namespace ExpenseApp
         }
 
         //Choose category icons
+
+      
         void CategoryChanged(object sender, EventArgs e)
         {
             var selectedCategory = dic.ElementAt(this.categoryPicker.SelectedIndex).Value;
 
-            categoryIcon.Source = selectedCategory;
+            categoryIcon.Source = selectedCategory;      
         }
 
 
