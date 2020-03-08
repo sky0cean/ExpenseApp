@@ -21,6 +21,7 @@ namespace ExpenseApp
             InitializeComponent();
 
             budgetLabel.Text = File.ReadAllText(App.budgetFilename);
+           
         }
       
         protected override void OnAppearing()
@@ -29,24 +30,29 @@ namespace ExpenseApp
 
             var expenses = new List<Expense>();
             var files = Directory.EnumerateFiles(App.FolderPath, "*.expenses.txt");
+            double sub = Double.Parse(budgetLabel.Text);
+            
 
-            foreach(var filename in files)
+            foreach (var filename in files)
             {
                 expenses.Add(new Expense
                 {
                     Filename = filename,
                     Text = File.ReadAllText(filename),
-                    //Amount = Double.Parse(File.ReadAllText(filename)),
-                    Date = File.GetCreationTime(filename)
+                    Amount = Double.Parse(File.ReadAllText(filename)),
+                    //Balance = sub-,
+                    Date = File.GetCreationTime(filename),
+                    
                 });
-
-                //TODO//  Do something here!!!
-                double sub = Double.Parse(budgetLabel.Text) - Double.Parse(File.ReadAllText(filename));
-                budgetLabel.Text = sub.ToString();
+                //TODO// Make below code cool with method ?
+                //Subtract each expense from budget
+                sub = sub - Double.Parse(File.ReadAllText(filename));
+                CurrentBudgetLabel.Text = sub.ToString();
             }
 
             
-            listView.ItemsSource = expenses.OrderBy(e => e.Date).ToList();          
+            listView.ItemsSource = expenses.OrderBy(e => e.Date).ToList();
+            
 
 
         }
