@@ -17,35 +17,35 @@ namespace ExpenseApp
     {
 
 
-        ////Selections for Category piker 
-        //Dictionary<string, string> dic = new Dictionary<string, string>()
-        //{
-        //    ["Clothing"] = "clothing.png",
-        //    ["Gas"]      =      "gas.png",
-        //    ["Grocery"]  =  "grocery.png",
-        //    ["Leisure"]  =  "leisure.png",
-        //    ["Rent"]     =     "rent.png",
-        //    ["Utility"]  =  "utility.png",
-        //};
+        //Selections for Category piker 
+        Dictionary<string, string> dic = new Dictionary<string, string>()
+        {
+            ["Clothing"] = "clothing.png",
+            ["Gas"] = "gas.png",
+            ["Grocery"] = "grocery.png",
+            ["Leisure"] = "leisure.png",
+            ["Rent"] = "rent.png",
+            ["Utility"] = "utility.png",
+        };
 
         public ExpenseEntryPage()
         {
             InitializeComponent();
 
 
-            //foreach (var key in dic.Keys)
-            //{
-            //    this.categoryPicker.Items.Add(key);
-            //}
+            foreach (var key in dic.Keys)
+            {
+                this.categoryPicker.Items.Add(key);
+            }
         }
 
-        ////Choose category icons
-        //void CategoryChanged(object sender, EventArgs e)
-        //{
-        //    var selectedCategory = dic.ElementAt(this.categoryPicker.SelectedIndex).Value;
+        //Choose category icons
+        void CategoryChanged(object sender, EventArgs e)
+        {
+            var selectedCategory = dic.ElementAt(this.categoryPicker.SelectedIndex).Value;
 
-        //    categoryIcon.Source = selectedCategory;
-        //}
+            categoryIcon.Source = selectedCategory;
+        }
 
 
         async void OnExpenseAddedButtonClicked(object sender, EventArgs e)
@@ -76,5 +76,7 @@ namespace ExpenseApp
             }
             await Navigation.PopAsync();
         }
+
+
     }
 }

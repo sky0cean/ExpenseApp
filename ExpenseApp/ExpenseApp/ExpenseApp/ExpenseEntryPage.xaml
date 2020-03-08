@@ -10,18 +10,26 @@
         <StackLayout Margin="10,35,10,10">
             <!-- Budget for the month starts from here -->
 
+        <StackLayout
+            Orientation="Vertical">
+            <Editor x:Name="NameEdit"
+                    Text=""
+                    Placeholder="What did you buy?" />
             <Editor x:Name="editor"
                     Text="{Binding Text}"
                     Keyboard="Numeric"
-                    Placeholder="Enter your expense"                  
-                    HeightRequest="100" />
-            <!--<Picker x:Name="categoryPicker" 
+                    Placeholder="How much was it?" />
+            <DatePicker x:Name="DateEdit" />
+            <StackLayout
+                Orientation="Horizontal">
+                <Picker x:Name="categoryPicker" 
                     Title ="Select category" 
                     SelectedIndexChanged="CategoryChanged" />
+                <Image x:Name="categoryIcon" Source="gas.png" />
+            </StackLayout>
 
-            <Image x:Name="categoryIcon" />-->
-            <!--<Image x:Name="categoryIcon" Source="gas.png" />-->
-            <Grid>
+        </StackLayout>
+        <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
