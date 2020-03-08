@@ -16,17 +16,29 @@
         <Label x:Name="CurrentBudgetLabel" />
 
         <ListView x:Name="listView"
-              Margin="50"
+              Margin="20"
               ItemSelected="OneListViewItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
-                            <Label Text="Name will come here" />
-                            <Label Text="{Binding Text}" />
-                            <Label Text="{Binding Date}"
-                                   HorizontalOptions="EndAndExpand"/>
-                            <Image Source="clothing.png" />
+                        <StackLayout 
+                            Orientation="Horizontal">
+                            <StackLayout
+                                Orientation="Vertical">
+                                <Label Text="Name will come here" />
+                                <StackLayout
+                                    Orientation="Horizontal">
+                                <Label Text="{Binding Text}"
+                                       TextColor="Red"/>
+                                <Label Text="{Binding Date}" />
+                                </StackLayout>
+                            </StackLayout>
+                            <Image 
+                                WidthRequest="40"
+                                HeightRequest="40"
+                                VerticalOptions="Center"
+                                HorizontalOptions="EndAndExpand"
+                                Source="clothing.png" />
                         </StackLayout>
                     </ViewCell>
                 <!--<ImageCell Text="{Binding Text}"
