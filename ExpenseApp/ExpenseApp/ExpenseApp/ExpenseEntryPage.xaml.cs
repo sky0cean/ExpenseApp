@@ -69,6 +69,7 @@ namespace ExpenseApp
             expense.Date = DateTime.UtcNow;
             expense.Product = NameEdit.Text;
             expense.Price = editor.Text;
+            expense.Icon = dic.ElementAt(this.categoryPicker.SelectedIndex).Value;
             //expense.Icon = categoryPicker.ItemsSource;
             await App.Database.SaveNoteAsync(expense);
             await Navigation.PopAsync();
