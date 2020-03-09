@@ -13,10 +13,8 @@
         <StackLayout
             Orientation="Vertical">
             <Editor x:Name="NameEdit"
-                    Text=""
                     Placeholder="What did you buy?" />
             <Editor x:Name="editor"
-                    Text="{Binding Text}"
                     Keyboard="Numeric"
                     Placeholder="How much was it?" />
             <DatePicker x:Name="DateEdit" />
@@ -25,7 +23,8 @@
                 <Picker x:Name="categoryPicker" 
                     Title ="Select category" 
                     SelectedIndexChanged="CategoryChanged" />
-                <Image x:Name="categoryIcon" Source="gas.png" />
+                <Image x:Name="categoryIcon" 
+                       Source="{Binding Source={x:Reference categoryPicker }, Path=Value}"/>
             </StackLayout>
 
         </StackLayout>

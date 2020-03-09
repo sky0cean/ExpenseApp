@@ -40,42 +40,52 @@ namespace ExpenseApp
         }
 
         //Choose category icons
-
-      
         void CategoryChanged(object sender, EventArgs e)
         {
             var selectedCategory = dic.ElementAt(this.categoryPicker.SelectedIndex).Value;
 
-            categoryIcon.Source = selectedCategory;      
+            categoryIcon.Source = selectedCategory;
         }
 
 
         async void OnExpenseAddedButtonClicked(object sender, EventArgs e)
         {
-            var expense = (Expense)BindingContext;
-            if (string.IsNullOrWhiteSpace(expense.Filename))
-            {
-                var filename = Path.Combine(App.FolderPath, $"{Path.GetRandomFileName()}.expenses.txt");
-                File.WriteAllText(filename, expense.Text);
-            }
-            else
-            {
-                File.WriteAllText(expense.Filename, expense.Text);
-            }
+            //var expense = (Expense)BindingContext;
+            //if (string.IsNullOrWhiteSpace(expense.Filename))
+            //{
+            //    // Save
+            //    var filename = Path.Combine(App.FolderPath, $"{Path.GetRandomFileName()}.expenses.txt");
+            //    File.WriteAllText(filename, expense.Text);
+            //}
+            //else
+            //{
+            //    // Update
+            //    File.WriteAllText(expense.Filename, expense.Text);
+            //}
 
+            //await Navigation.PopAsync();
+
+            var expense = (Expense)BindingContext;
+            expense.Date = DateTime.UtcNow;
+            await App.Database.SaveNoteAsync(expense);
             await Navigation.PopAsync();
         }
 
         async void OnExpenseDeleteButtonClicked(object sender, EventArgs e)
         {
-            var expense = BindingContext as Expense;
-            if (expense == null)
-                return;
+            //var expense = BindingContext as Expense;
+            //if (expense == null)
+            //    return;
 
-            if (File.Exists(expense.Filename))
-            {
-                File.Delete(expense.Filename);
-            }
+            //if (File.Exists(expense.Filename))
+            //{
+            //    File.Delete(expense.Filename);
+            //}
+
+            //await Navigation.PopAsync();
+
+            var expense = (Expense)BindingContext;
+            await App.Database.DeleteNoteAsync(expense);
             await Navigation.PopAsync();
         }
 

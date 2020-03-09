@@ -23,34 +23,34 @@ namespace ExpenseApp
            
         }
       
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            var expenses = new List<Expense>();
-            var files = Directory.EnumerateFiles(App.FolderPath, "*.expenses.txt");
-            double sub = Double.Parse(budgetLabel.Text);
-
-            
+            //var expenses = new List<Expense>();
+            //var files = Directory.EnumerateFiles(App.FolderPath, "*.expenses.txt");
+            //double sub = Double.Parse(budgetLabel.Text);
 
 
-            foreach (var filename in files)
-            {
-                expenses.Add(new Expense
-                {
-                    Filename = filename,
-                    Text = File.ReadAllText(filename),
-                    Amount = Double.Parse(File.ReadAllText(filename)),
-                    Date = File.GetCreationTime(filename),
-                    
-                });
-                //TODO// Make below code cool with method ?
-                //Subtract each expense from budget
-                sub = sub - Double.Parse(File.ReadAllText(filename));
-                CurrentBudgetLabel.Text = sub.ToString();
-            }
-         
-            listView.ItemsSource = expenses.OrderBy(e => e.Date).ToList();          
+
+
+            //foreach (var filename in files)
+            //{
+            //    expenses.Add(new Expense
+            //    {
+            //        Filename = filename,
+            //        Text = File.ReadAllText(filename),                  
+            //        Date = File.GetCreationTime(filename),
+
+            //    });
+            //    //TODO// Make below code cool with method ?
+            //    //Subtract each expense from budget
+            //    //sub = sub - Double.Parse(File.ReadAllText(filename));
+            //    //CurrentBudgetLabel.Text = sub.ToString();
+            //}
+
+            //listView.ItemsSource = expenses.OrderBy(e => e.Date).ToList();        
+            listView.ItemsSource = await App.Database.GetNotesAsync();
 
         }
 
