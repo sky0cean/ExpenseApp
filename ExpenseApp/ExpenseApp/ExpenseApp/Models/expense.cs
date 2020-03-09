@@ -10,10 +10,11 @@ namespace ExpenseApp.Models
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         //public string Filename { get; set; }
-        public string Text { get; set; }
+        public string Product { get; set; }
+        public string Price { get; set; }
         //public double Amount { get; set; }
         public DateTime Date { get; set; }
-        //public string Icon { get; set; }
+        public string Icon { get; set; }
         //public double Balance { get; set; }
 
         //TODO//  Do something here!!!

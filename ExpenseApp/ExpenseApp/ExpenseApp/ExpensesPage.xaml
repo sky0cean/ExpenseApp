@@ -25,17 +25,17 @@
                             Orientation="Horizontal">
                             <StackLayout
                                 Orientation="Vertical">
-                                <Label x:Name="InputProductLabel" BindingContext="{x:Reference Name=NameEdit}" Text="{Binding Value}" />
+                                <Label x:Name="InputProductLabel"  Text="{Binding Product}" />
                                 <StackLayout
                                     Orientation="Horizontal">
-                                    <Label x:Name="InputPriceLabel" Text="{Binding Text}"
+                                    <Label x:Name="InputPriceLabel" Text="{Binding Price}"
                                        TextColor="Red"/>
-                                    <Label x:Name="InputDateLabel" BindingContext="{x:Reference Name=DateEdit}" Text="{Binding Value}" />
+                                    <Label x:Name="InputDateLabel" Text="{Binding Date}" />
                                 </StackLayout>
                             </StackLayout>
                             <Image 
                                 x:Name="InputIconLabel"
-                                Source="{Binding Source={x:Reference categoryPicker }, Path=Value}"
+                                Source="{Binding Icon}"
                                 WidthRequest="40"
                                 HeightRequest="40"
                                 VerticalOptions="Center"

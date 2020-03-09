@@ -67,6 +67,9 @@ namespace ExpenseApp
 
             var expense = (Expense)BindingContext;
             expense.Date = DateTime.UtcNow;
+            expense.Product = NameEdit.Text;
+            expense.Price = editor.Text;
+            //expense.Icon = categoryPicker.ItemsSource;
             await App.Database.SaveNoteAsync(expense);
             await Navigation.PopAsync();
         }
