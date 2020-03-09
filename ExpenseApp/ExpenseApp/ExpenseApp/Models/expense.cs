@@ -14,6 +14,15 @@ namespace ExpenseApp.Models
         public string Price { get; set; }
         //public double Amount { get; set; }
         public DateTime Date { get; set; }
+
+        //public DateTime Date
+        //{
+        //    get => Date.ToLocalTime();
+        //    set
+        //    {
+        //        Date = value;
+        //    }
+        //}
         public string Icon { get; set; }
         //public double Balance { get; set; }
 
@@ -36,5 +45,8 @@ namespace ExpenseApp.Models
 
 
 
-    }    
+
+
+
+    }
 }

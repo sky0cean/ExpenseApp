@@ -13,6 +13,8 @@ namespace ExpenseApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 
+
+
     public partial class ExpenseEntryPage : ContentPage
     {
 
@@ -28,6 +30,7 @@ namespace ExpenseApp
             ["Utility"] = "utility.png",
         };
 
+
         public ExpenseEntryPage()
         {
             InitializeComponent();
@@ -39,13 +42,13 @@ namespace ExpenseApp
             }
         }
 
-        //Choose category icons
-        void CategoryChanged(object sender, EventArgs e)
-        {
-            var selectedCategory = dic.ElementAt(this.categoryPicker.SelectedIndex).Value;
+        ////Choose category icons
+        //void CategoryChanged(object sender, EventArgs e)
+        //{
+        //    var selectedCategory = dic.ElementAt(this.categoryPicker.SelectedIndex).Value;
 
-            categoryIcon.Source = selectedCategory;
-        }
+        //    categoryIcon.Source = selectedCategory;
+        //}
 
 
         async void OnExpenseAddedButtonClicked(object sender, EventArgs e)
@@ -66,7 +69,8 @@ namespace ExpenseApp
             //await Navigation.PopAsync();
 
             var expense = (Expense)BindingContext;
-            expense.Date = DateTime.UtcNow;
+
+            expense.Date = DatePick.Date;
             expense.Product = NameEdit.Text;
             expense.Price = editor.Text;
             expense.Icon = dic.ElementAt(this.categoryPicker.SelectedIndex).Value;
@@ -93,6 +97,9 @@ namespace ExpenseApp
             await Navigation.PopAsync();
         }
 
+        private void DatePick_DateSelected(object sender, DateChangedEventArgs e)
+        {
 
+        }
     }
 }

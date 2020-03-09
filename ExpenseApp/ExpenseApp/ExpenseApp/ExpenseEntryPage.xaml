@@ -17,13 +17,16 @@
             <Editor x:Name="editor"
                     Keyboard="Numeric"
                     Placeholder="How much was it?" />
-            <DatePicker x:Name="DateEdit" />
+            <DatePicker x:Name="DatePick"
+                        MinimumDate="01/01/2020"
+                        MaximumDate="12/31/2050"/>
             <StackLayout
                 Orientation="Horizontal">
                 <Picker x:Name="categoryPicker" 
                     Title ="Select category" 
-                    SelectedIndexChanged="CategoryChanged" />
-                <Image x:Name="categoryIcon" 
+                    />
+                    <!--SelectedIndexChanged="CategoryChanged"-->
+                    <Image x:Name="categoryIcon" 
                        Source="{Binding Icon}"/>
             </StackLayout>
 
