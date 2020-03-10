@@ -8,6 +8,8 @@ namespace ExpenseApp.Models
 {
     public class Expense: INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         //public string Filename { get; set; }
@@ -17,9 +19,20 @@ namespace ExpenseApp.Models
         public DateTime Date { get; set; }
         public string Icon { get; set; }
         public double Balance { get; set; }
-        public string NewBalance { get; set; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+        public string newBalance;
+        
+        public string NewBalance
+        {
+            get { return newBalance; }
+            set
+            {
+                if (newBalance != value)
+                {
+                    newBalance = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NewBalance)));
+                }
+            }
+        }
 
 
 

@@ -16,9 +16,7 @@ namespace ExpenseApp
 
 
     public partial class ExpenseEntryPage : ContentPage
-    {
-
-      
+    {   
 
 
         //Selections for Category piker
@@ -57,8 +55,8 @@ namespace ExpenseApp
             expense.Price = editor.Text;
             expense.Icon = dic.ElementAt(this.categoryPicker.SelectedIndex).Value;
             expense.Balance = double.Parse(editor.Text);
-            //expense.Amount = double.Parse(File.ReadAllText(App.budgetFilename));
-            //expense.NewBalance = (expense.Amount - expense.Balance).ToString();
+            expense.Amount = double.Parse(File.ReadAllText(App.budgetFilename));
+            expense.NewBalance = (expense.Amount - expense.Balance).ToString();
 
             await App.Database.SaveNoteAsync(expense);
             await Navigation.PopAsync();

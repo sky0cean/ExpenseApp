@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,15 +14,14 @@ namespace ExpenseApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExpensesPage : ContentPage
-    {
-        
+    {     
 
         public ExpensesPage()
         {
             InitializeComponent();
 
             budgetLabel.Text = File.ReadAllText(App.budgetFilename);
-            //CurrentBudgetLabel.Text = File.ReadAllText(App.budgetFilename);
+           
 
         }
       
@@ -29,9 +29,7 @@ namespace ExpenseApp
         {
             base.OnAppearing();
       
-            listView.ItemsSource = await App.Database.GetNotesAsync();
-            
-
+            listView.ItemsSource = await App.Database.GetNotesAsync();            
 
         }
 
@@ -41,6 +39,7 @@ namespace ExpenseApp
             await Navigation.PushAsync(new ExpenseEntryPage
             {
                 BindingContext = new Expense()
+                
             });
         }
 

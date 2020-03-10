@@ -31,7 +31,7 @@ namespace ExpenseApp
             InitializeComponent();
             //FolderPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             budgetFilename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "budget.txt");
-            currentBalance = double.Parse(File.ReadAllText(App.budgetFilename));
+            
 
 
             //If User sets budget, goto Expense  page, else go to Budget entry page 
@@ -43,8 +43,8 @@ namespace ExpenseApp
             {
                 MainPage = new NavigationPage(new BudgetEntryPage());
             }
-            
 
+            currentBalance = double.Parse(File.ReadAllText(App.budgetFilename));
         }
 
         protected override void OnStart()
