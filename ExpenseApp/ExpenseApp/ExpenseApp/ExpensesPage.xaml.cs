@@ -13,44 +13,25 @@ namespace ExpenseApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExpensesPage : ContentPage
-    {      
+    {
+        
 
         public ExpensesPage()
         {
             InitializeComponent();
 
             budgetLabel.Text = File.ReadAllText(App.budgetFilename);
-           
+            CurrentBudgetLabel.Text = File.ReadAllText(App.budgetFilename);
+
         }
       
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
-            //var expenses = new List<Expense>();
-            //var files = Directory.EnumerateFiles(App.FolderPath, "*.expenses.txt");
-            //double sub = Double.Parse(budgetLabel.Text);
-
-
-
-
-            //foreach (var filename in files)
-            //{
-            //    expenses.Add(new Expense
-            //    {
-            //        Filename = filename,
-            //        Text = File.ReadAllText(filename),                  
-            //        Date = File.GetCreationTime(filename),
-
-            //    });
-            //    //TODO// Make below code cool with method ?
-            //    //Subtract each expense from budget
-            //    //sub = sub - Double.Parse(File.ReadAllText(filename));
-            //    //CurrentBudgetLabel.Text = sub.ToString();
-            //}
-
-            //listView.ItemsSource = expenses.OrderBy(e => e.Date).ToList();        
+      
             listView.ItemsSource = await App.Database.GetNotesAsync();
+            
+
 
         }
 

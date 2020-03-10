@@ -23,14 +23,15 @@ namespace ExpenseApp
         }
 
         //public static string FolderPath { get; set; }
-        public static string budgetFilename { get; set; } 
+        public static string budgetFilename { get; set; }
+        public double currentBalance { get; set; }
 
         public App()
         {
             InitializeComponent();
             //FolderPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             budgetFilename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "budget.txt");
-     
+            currentBalance = double.Parse(File.ReadAllText(App.budgetFilename));
 
 
             //If User sets budget, goto Expense  page, else go to Budget entry page 

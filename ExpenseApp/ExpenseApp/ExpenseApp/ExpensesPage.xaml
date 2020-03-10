@@ -13,12 +13,13 @@
     <StackLayout>
         <Label x:Name="budgetLabel" />
         <Button Text="Reset budget" x:Name="ResetBudgetButton" Clicked="ResetBudgetButtonClicked" />
-        <Label x:Name="CurrentBudgetLabel" />
+        <Label x:Name="CurrentBudgetLabel" Text="{Binding NewBalance}" />
 
         <ListView x:Name="listView"
               Margin="20"
               ItemSelected="OneListViewItemSelected">
-        <ListView.ItemTemplate>
+         
+            <ListView.ItemTemplate>
             <DataTemplate>
                     <ViewCell>
                         <StackLayout 
@@ -28,9 +29,10 @@
                                 <Label x:Name="InputProductLabel"  Text="{Binding Product}" />
                                 <StackLayout
                                     Orientation="Horizontal">
-                                    <Label x:Name="InputPriceLabel" Text="{Binding Price}"
+                                    <Label x:Name="InputPriceLabel" Padding="0,0,20,0" 
+                                       Text= "{Binding Price, StringFormat='$ {0:}'}"
                                        TextColor="Red"/>
-                                    <Label x:Name="InputDateLabel" Text="{Binding Date}" />
+                                    <Label x:Name="InputDateLabel"  Text="{Binding Date, StringFormat='Purchased on {0:yyy/MM/dd}'}" />
                                 </StackLayout>
                             </StackLayout>
                             <Image 

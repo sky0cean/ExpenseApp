@@ -23,9 +23,8 @@
             <StackLayout
                 Orientation="Horizontal">
                 <Picker x:Name="categoryPicker" 
-                    Title ="Select category" 
-                    />
-                    <!--SelectedIndexChanged="CategoryChanged"-->
+                    Title ="Select category" />
+
                     <Image x:Name="categoryIcon" 
                        Source="{Binding Icon}"/>
             </StackLayout>
