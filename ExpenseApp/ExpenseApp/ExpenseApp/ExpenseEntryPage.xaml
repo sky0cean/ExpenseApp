@@ -13,6 +13,8 @@
         <StackLayout
             Orientation="Vertical">
             <Editor x:Name="NameEdit"
+                    IsSpellCheckEnabled="True"
+                    IsTextPredictionEnabled="True"                    
                     Placeholder="What did you buy?" />
             <Editor x:Name="editor"
                     Keyboard="Numeric"

@@ -21,7 +21,7 @@ namespace ExpenseApp
             InitializeComponent();
 
             budgetLabel.Text = File.ReadAllText(App.budgetFilename);
-            CurrentBudgetLabel.Text = File.ReadAllText(App.budgetFilename);
+            //CurrentBudgetLabel.Text = File.ReadAllText(App.budgetFilename);
 
         }
       

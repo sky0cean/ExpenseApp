@@ -11,14 +11,23 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
+        <StackLayout
+            Orientation="Vertical">
+            <Label Text="This Month Budget" />
         <Label x:Name="budgetLabel" />
-        <Button Text="Reset budget" x:Name="ResetBudgetButton" Clicked="ResetBudgetButtonClicked" />
-        <Label x:Name="CurrentBudgetLabel" Text="{Binding NewBalance}" />
-
+        <Button Text="Reset budget" x:Name="ResetBudgetButton" Font="Bold" Clicked="ResetBudgetButtonClicked" />
+        </StackLayout>
+        <StackLayout
+            Orientation="Horizontal">
+            <Label Text="Current Balance" />
+        <Label x:Name="CurrentBudgetLabel" Font="Bold" Text="{Binding NewBalance}" />
+        <Image x:Name="BudgetImage" 
+               HorizontalOptions="EndAndExpand"
+               Source="happy.png"/>
+        </StackLayout>
         <ListView x:Name="listView"
               Margin="20"
               ItemSelected="OneListViewItemSelected">
-         
             <ListView.ItemTemplate>
             <DataTemplate>
                     <ViewCell>
