@@ -13,28 +13,25 @@
     <StackLayout>
         <StackLayout
             Orientation="Vertical">
-            <Label Text="This Month Budget" />
-            
-        <Label x:Name="budgetLabel" />
-
-        <Button Text="Reset budget" x:Name="ResetBudgetButton"  Clicked="ResetBudgetButtonClicked" />
+            <Label Text="This Month Budget" Margin="10,0,0,0" />
+            <Label x:Name="budgetLabel" FontSize="Large" FontAttributes="Bold" Margin="15,0,0,0" />
+            <Button Text="Reset budget" x:Name="ResetBudgetButton"  Clicked="ResetBudgetButtonClicked" />
         </StackLayout>
         <StackLayout
             Orientation="Horizontal">
-            
-            <Label Text="Remaining budget"/>
-            
-        <Label x:Name="CurrentBudgetLabel"/>
-            
-            
-        <Image x:Name="BudgetImage" 
+        <StackLayout
+            Orientation="Vertical">
+                <Label Text="Remaining budget" Margin="10,0,0,0"/>
+                <Label x:Name="CurrentBudgetLabel" FontSize="Large" FontAttributes="Bold" Margin="15,0,0,0"/>
+         </StackLayout>
+            <Image x:Name="BudgetImage" 
                HorizontalOptions="EndAndExpand"
                Source="happy.png"/>
         </StackLayout>
 
 
         <ListView x:Name="listView"
-              Margin="20"
+              Margin="15,0,0,0"
               ItemSelected="OneListViewItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -46,15 +43,17 @@
                                 <Label x:Name="InputProductLabel"  Text="{Binding Product}" />
                                 <StackLayout
                                     Orientation="Horizontal">
-                                    <Label x:Name="InputPriceLabel" Padding="0,0,20,0" 
+                                    <Label x:Name="InputPriceLabel" Padding="0,0,15,0" 
                                        Text= "{Binding Price, StringFormat='$ {0:}'}"
-                                       TextColor="Red"/>
+                                       TextColor="Red"
+                                       FontAttributes="Bold" />
                                     <Label x:Name="InputDateLabel"  Text="{Binding Date, StringFormat='Purchased on {0:yyy/MM/dd}'}" />
                                 </StackLayout>
                             </StackLayout>
                             <Image 
                                 x:Name="InputIconLabel"
                                 Source="{Binding Icon}"
+                                Margin="0,0,15,0"
                                 WidthRequest="40"
                                 HeightRequest="40"
                                 VerticalOptions="Center"
