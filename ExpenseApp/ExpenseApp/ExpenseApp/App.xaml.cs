@@ -31,19 +31,7 @@ namespace ExpenseApp
             //FolderPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             budgetFilename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "budget.txt");
             
-
-
-            //If User sets budget, goto Expense  page, else go to Budget entry page 
-            if (File.Exists(budgetFilename))
-            {
-                MainPage = new NavigationPage(new ExpensesPage());
-            }
-            else
-            {
-                MainPage = new NavigationPage(new BudgetEntryPage());
-            }
-
-
+            MainPage = new NavigationPage(new BudgetEntryPage());
 
         }
 

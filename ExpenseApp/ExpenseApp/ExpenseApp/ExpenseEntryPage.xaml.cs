@@ -33,28 +33,27 @@ namespace ExpenseApp
         {
             InitializeComponent();
 
-
             foreach (var key in dic.Keys)
             {
                 this.categoryPicker.Items.Add(key);
             }
-
-            
         }
 
+        private void CategoryChanged(object sender, EventArgs e)
+        {
+            var selectedCategory = dic.ElementAt(this.categoryPicker.SelectedIndex).Value;
+
+            categoryIcon.Source = selectedCategory;
+        }
 
         async void OnExpenseAddedButtonClicked(object sender, EventArgs e)
         {
 
             var expense = (Expense)BindingContext;
-
             expense.Date = DatePick.Date;
             expense.Product = NameEdit.Text;
             expense.Price = editor.Text;
             expense.Icon = dic.ElementAt(this.categoryPicker.SelectedIndex).Value;
-            //expense.Balance = double.Parse(editor.Text);
-            //expense.Amount = double.Parse(File.ReadAllText(App.budgetFilename));
-            //expense.NewBalance = (expense.Amount - expense.Balance).ToString();
             await App.Database.SaveNoteAsync(expense);
             await Navigation.PopAsync();
         }

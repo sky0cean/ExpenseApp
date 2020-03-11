@@ -30,15 +30,11 @@ namespace ExpenseApp
         ////Go to Expense Entry page once budget is saved.
         async private void OnSaveButtonClicked(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(App.budgetFilename)){
+         
                 File.WriteAllText(App.budgetFilename, BudgetEditor.Text);
-            }
-            else
-            {
-                File.WriteAllText(App.budgetFilename, BudgetEditor.Text);
-            }
+            
 
-            await Navigation.PushAsync(new ExpensesPage(), true);
+                await Navigation.PushAsync(new ExpensesPage(), true);
         }
 
         //Make budget blank when user deletes budget
@@ -48,9 +44,10 @@ namespace ExpenseApp
             {
                 File.Delete(App.budgetFilename);
             }
+            
             BudgetEditor.Text = string.Empty;
 
-            await Navigation.PopAsync();
+            await Navigation.PushAsync(new BudgetEntryPage(), true);
         }
     }
 }
