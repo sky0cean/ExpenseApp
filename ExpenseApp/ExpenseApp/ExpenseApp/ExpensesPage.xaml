@@ -14,14 +14,19 @@
         <StackLayout
             Orientation="Vertical">
             <Label Text="This Month Budget" />
+            
         <Label x:Name="budgetLabel" />
+
         <Button Text="Reset budget" x:Name="ResetBudgetButton"  Clicked="ResetBudgetButtonClicked" />
         </StackLayout>
         <StackLayout
             Orientation="Horizontal">
-            <Label Text="Remaining budget" />
-        <Label x:Name="CurrentBudgetLabel"
-               Text="{Binding NewBalance}"/>
+            
+            <Label Text="Remaining budget"/>
+            
+        <Label x:Name="CurrentBudgetLabel"/>
+            
+            
         <Image x:Name="BudgetImage" 
                HorizontalOptions="EndAndExpand"
                Source="happy.png"/>

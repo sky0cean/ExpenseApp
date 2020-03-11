@@ -14,22 +14,56 @@ namespace ExpenseApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExpensesPage : ContentPage
-    {     
+    {
+        private double UpdateRemain(System.Collections.IEnumerable expenses)
+        {
+            double budget = double.Parse(budgetLabel.Text);
+
+            double balance = 0.0;
+            foreach (Expense e in expenses)
+            {
+                balance += double.Parse(e.Price);
+            }
+
+            double budgetRemain = budget - balance;
+
+            CurrentBudgetLabel.Text = budgetRemain.ToString();
+
+            return budgetRemain;
+        }
+
+        private void UpdateFace(ImageSource source, double budgetRemain)
+        {
+            if (budgetRemain >= 0)
+            {
+                BudgetImage.Source = "happy.png";
+            }
+            else
+            {
+                BudgetImage.Source = "sad.png";
+            }
+        }
 
         public ExpensesPage()
         {
             InitializeComponent();
 
             budgetLabel.Text = File.ReadAllText(App.budgetFilename);
-           
+            CurrentBudgetLabel.Text = (0.0).ToString();
 
         }
       
         protected override async void OnAppearing()
         {
+
             base.OnAppearing();
       
-            listView.ItemsSource = await App.Database.GetNotesAsync();            
+            listView.ItemsSource = await App.Database.GetNotesAsync();
+
+            double budgetRemain = UpdateRemain(listView.ItemsSource);
+
+            UpdateFace(BudgetImage.Source, budgetRemain);
+
 
         }
 

@@ -24,7 +24,6 @@ namespace ExpenseApp
 
         //public static string FolderPath { get; set; }
         public static string budgetFilename { get; set; }
-        public double currentBalance { get; set; }
 
         public App()
         {
@@ -45,6 +44,7 @@ namespace ExpenseApp
             }
 
             //currentBalance = double.Parse(File.ReadAllText(App.budgetFilename));
+
         }
 
         protected override void OnStart()

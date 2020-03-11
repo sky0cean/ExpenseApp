@@ -13,8 +13,6 @@ namespace ExpenseApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 
-
-
     public partial class ExpenseEntryPage : ContentPage
     {   
 
@@ -54,10 +52,9 @@ namespace ExpenseApp
             expense.Product = NameEdit.Text;
             expense.Price = editor.Text;
             expense.Icon = dic.ElementAt(this.categoryPicker.SelectedIndex).Value;
-            expense.Balance = double.Parse(editor.Text);
-            expense.Amount = double.Parse(File.ReadAllText(App.budgetFilename));
-            expense.NewBalance = (expense.Amount - expense.Balance).ToString();
-
+            //expense.Balance = double.Parse(editor.Text);
+            //expense.Amount = double.Parse(File.ReadAllText(App.budgetFilename));
+            //expense.NewBalance = (expense.Amount - expense.Balance).ToString();
             await App.Database.SaveNoteAsync(expense);
             await Navigation.PopAsync();
         }
