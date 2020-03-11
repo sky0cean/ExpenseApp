@@ -19,7 +19,7 @@
         </StackLayout>
         <StackLayout
             Orientation="Horizontal">
-            <Label Text="Current Balance" />
+            <Label Text="Remaining budget" />
         <Label x:Name="CurrentBudgetLabel"
                Text="{Binding NewBalance}"/>
         <Image x:Name="BudgetImage" 
@@ -54,7 +54,6 @@
                                 HeightRequest="40"
                                 VerticalOptions="Center"
                                 HorizontalOptions="EndAndExpand"/>
-                                <!--Source="clothing.png"--> 
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

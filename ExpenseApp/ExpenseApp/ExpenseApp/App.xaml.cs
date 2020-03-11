@@ -44,7 +44,7 @@ namespace ExpenseApp
                 MainPage = new NavigationPage(new BudgetEntryPage());
             }
 
-            currentBalance = double.Parse(File.ReadAllText(App.budgetFilename));
+            //currentBalance = double.Parse(File.ReadAllText(App.budgetFilename));
         }
 
         protected override void OnStart()
