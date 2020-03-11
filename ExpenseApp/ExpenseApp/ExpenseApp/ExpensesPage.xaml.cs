@@ -28,15 +28,20 @@ namespace ExpenseApp
             double budgetRemain = budget - balance;
 
             CurrentBudgetLabel.Text = budgetRemain.ToString();
+            
 
             return budgetRemain;
         }
 
         private void UpdateFace(ImageSource source, double budgetRemain)
         {
-            if (budgetRemain >= 0)
+            if (budgetRemain > 0)
             {
                 BudgetImage.Source = "happy.png";
+            }
+            else if(budgetRemain ==0)
+            {
+                BudgetImage.Source = "smile.png"; 
             }
             else
             {

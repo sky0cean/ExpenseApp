@@ -9,7 +9,8 @@
 
         <!-- Budget for the month starts from here -->
     <StackLayout>
-
+        <Image Source="skyhappy.png" Aspect="AspectFit" />
+        
         <Editor x:Name="BudgetEditor"
                 Keyboard="Numeric"
                 Placeholder="Enter your monthly goal"
@@ -29,5 +30,7 @@
                     Text="Delete"
                     Clicked="OnDeleteButtonClicked" />
         </Grid>
+        <Image Source="icon.png" Aspect="AspectFit" />
+        
     </StackLayout>
 </ContentPage>

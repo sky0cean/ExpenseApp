@@ -14,7 +14,11 @@
         <StackLayout
             Orientation="Vertical">
             <Label Text="This Month Budget" Margin="10,0,0,0" />
-            <Label x:Name="budgetLabel" FontSize="Large" FontAttributes="Bold" Margin="15,0,0,0" />
+            <StackLayout
+                Orientation="Horizontal">
+            <Label Text="$" FontSize="Large" FontAttributes="Bold" Margin="10,0,0,0" />
+            <Label x:Name="budgetLabel"  FontSize="Large" FontAttributes="Bold" Margin="15,0,0,0" />
+            </StackLayout>
             <Button Text="Reset budget" x:Name="ResetBudgetButton"  Clicked="ResetBudgetButtonClicked" />
         </StackLayout>
         <StackLayout
@@ -22,13 +26,15 @@
         <StackLayout
             Orientation="Vertical">
                 <Label Text="Remaining budget" Margin="10,0,0,0"/>
-                <Label x:Name="CurrentBudgetLabel" FontSize="Large" FontAttributes="Bold" Margin="15,0,0,0"/>
-         </StackLayout>
+                <StackLayout
+                Orientation="Horizontal">
+                    <Label Text="$" FontSize="Large" FontAttributes="Bold" Margin="10,0,0,0" />
+                    <Label x:Name="CurrentBudgetLabel" FontSize="Large" FontAttributes="Bold" Margin="15,0,0,0"/>
+                </StackLayout>
+            </StackLayout>
             <Image x:Name="BudgetImage" 
-               HorizontalOptions="EndAndExpand"
-               Source="happy.png"/>
+               HorizontalOptions="EndAndExpand"/>
         </StackLayout>
-
 
         <ListView x:Name="listView"
               Margin="15,0,0,0"
