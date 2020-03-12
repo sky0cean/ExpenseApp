@@ -19,7 +19,7 @@
 * Download Expense Zip file on Desktop
 * Open folder with VisualStudio 2019
 * Experience App with Debug mode
-* See the Demovideo on YouTube from here [https://youtu.be/ceKtsoWqnpI](https://youtu.be/ceKtsoWqnpI)
+* See the Demovideo on YouTube from here :point_right: [https://youtu.be/ceKtsoWqnpI](https://youtu.be/ceKtsoWqnpI):tv:
 
 
 ## How to use the app
