@@ -10,4 +10,5 @@
 <a target="_blank" href="https://icons8.com/icons/set/happy">Happy icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 <a target="_blank" href="https://icons8.com/icons/set/sad">Sad icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 <a target="_blank" href="https://icons8.jp/icons/set/smiling">Smiling icon</a> icon by <a target="_blank" href="https://icons8.jp">Icons8</a>
+<a target="_blank" rel="noopener" href="https://photos.icons8.com/photos/beautiful-countryside-breakfast--59d9a4cf0b7a6a20412e3653">Photo</a> by <a target="_blank" rel="noopener" href="https://photos.icons8.com">Moose</a>
 
