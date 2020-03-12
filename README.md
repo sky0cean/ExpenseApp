@@ -15,7 +15,7 @@
 * Download Expense Zip file on Desktop
 * Open folder with VisualStudio 2019
 * Experience App with Debug mode
-* See the Demovideo from here [https://github.com/udacity/frontend-nanodegree-arcade-game](https://github.com/udacity/frontend-nanodegree-arcade-game)
+* See the Demovideo on YouTube from here [https://youtu.be/ceKtsoWqnpI](https://youtu.be/ceKtsoWqnpI)
 
 
 ## How to use the app
