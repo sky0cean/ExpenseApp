@@ -1,6 +1,6 @@
 # :money_with_wings: Expense App for Android :money_with_wings:
 
-![Expense_App image](https://github.com/sky0cean/Udacity/blob/master/Front-EndWebDeveloperNanodegree/FroggerGame/images/froggerGame.png)
+![Mobile_App image](https://github.com/sky0cean/ExpenseApp/blob/master/Food.png)
 ## Index
 
 1. System requirements
@@ -35,4 +35,4 @@ https://docs.microsoft.com/en-us/xamarin/get-started/quickstarts/multi-page?pivo
 https://docs.microsoft.com/en-us/xamarin/get-started/quickstarts/database?pivots=windows
 
 ## Attributes
-![Icons] from https://icons8.com/ ()
+![Icons](https://github.com/sky0cean/ExpenseApp/blob/master/Attribute.txt) from https://icons8.com/ ()
